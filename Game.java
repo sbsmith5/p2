@@ -72,8 +72,7 @@ public class Game{
      * @returns the length of the Joblist.
      */
     public int getNumberOfJobs(){
-        //TODO: Get the number of jobs in the JobList
-        return 0;
+        return list.size();
     }
 
     /**
@@ -87,10 +86,7 @@ public class Game{
      *      The job to be inserted in the list.
      */
     public void addJob(int pos, Job item){
-        /**
-         * TODO: Add a job in the list
-         * based on position
-         */
+    	list.add(pos, item);
     }
 
     /**
@@ -99,7 +95,7 @@ public class Game{
      *      The job to be inserted in the list.
      */
     public void addJob(Job item){
-        //TODO: Add a job in the joblist
+    	list.add(item);
     }
 
     /**
@@ -123,8 +119,17 @@ public class Game{
      *      The amount of time the given job is to be worked on for.
      */
     public Job updateJob(int index, int duration){
-        //TODO: As per instructions in comments
-        return null;
+    	Job currJob = list.remove(index);
+    	int timePenalty = Integer.parseInt(currJob.getJobName().substring(1));
+    	timeToPlay -= timePenalty;
+    	if (duration > timeToPlay)
+    		duration = timeToPlay;
+    	for (int i = 0; i < duration; i++) { //the best I could come up with for “execute job??”
+    		currJob.setSteps(currJob.getSteps() + 1);
+    		timeToPlay--;
+    	}
+    	if (currJob.isCompleted()) scoreBoard.updateScoreBoard(currJob);
+    	return currJob;
     }
 
     /**
@@ -144,7 +149,7 @@ public class Game{
      * This function simply invokes the displayScoreBoard method in the ScoreBoard class.
      */
     public void displayCompletedJobs(){
-        //TODO: Display all the completed jobs
+        scoreBoard.displayScoreBoard();
 
     }
 
@@ -153,7 +158,6 @@ public class Game{
      * @return the value calculated by getTotalScore
      */
     public int getTotalScore(){
-        //TODO: Return the total score accumulated
-        return 0;
+        return scoreBoard.getTotalScore();
     }
 }
