@@ -19,9 +19,11 @@ public class Game{
      * duration used to determine the length of the game.
      */
     public Game(int seed, int timeToPlay){
-        /**
-         * TODO: Initializes all member variables
-         */
+    	//Initialize all variables
+       scoreBoard = new Scoreboard();
+       this.timeToPlay = timeToPlay;
+       jobSimulator = new JobSimulator(seed);
+    	
     }
 
     /**
@@ -29,8 +31,8 @@ public class Game{
      * @returns the amount of time left in the game.
      */
     public int getTimeToPlay() {
-        //TODO: return the amount of time left
-        return 0;
+        //return the amount of time left
+        return timeToPlay;
     }
 
     /**
@@ -40,7 +42,8 @@ public class Game{
      *        the remaining duration of the game
      */
     public void setTimeToPlay(int timeToPlay) {
-        //TODO: Setter for amount of time to play
+        //Setter for amount of time to play
+    	this.timeToPlay = timeToPlay;
     }
 
     /**
@@ -51,6 +54,9 @@ public class Game{
      */
     public boolean isOver(){
         //TODO: check if the game is over or not
+    	if(timeToPlay<=0){
+    		return true;
+    	}
         return false;
     }
     /**
@@ -59,7 +65,7 @@ public class Game{
      */
     public void createJobs(){
         //TODO: Invoke the simulator to create jobs
-
+    	
     }
 
     /**

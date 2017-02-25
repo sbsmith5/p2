@@ -22,9 +22,13 @@ public boolean hasNext() {
 
 @Override
 public Job next() {
+	
 	if(curr.getNext()==null){
 		throw new NoSuchElementException();
 	}
-	return curr.getNext().getData();
+	curr = curr.getNext();
+	return curr.getData();
+	
+	
 }
 }
