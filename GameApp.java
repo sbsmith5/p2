@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class GameApp{
-    /**
+    
+	private Game game;
+	/**
      * Scanner instance for reading input from console
      */
     private static final Scanner STDIN = new Scanner(System.in);
@@ -12,7 +14,7 @@ public class GameApp{
      * @param timeToPlay: Total time to play from command line
      */
     public GameApp(int seed, int timeToPlay){
-        //TODO: Create a new instance of Game class
+        game = new Game (seed, timeToPlay);
     }
 
     /**
@@ -26,9 +28,29 @@ public class GameApp{
     public static void main(String[] args){
 
         System.out.println("Welcome to the Job Market!");
-      
-        //TODO: Take input from command line, process it and add error checking
+        GameApp gameApp = new GameApp (Integer.valueOf(args[0]), Integer.valueOf(args[1]));
+        if (Integer.valueOf(args[0]) <= 0 || Integer.valueOf(args[1]) <= 0)
+        {
+        	//terminate the game
+        	gameApp.game.setTimeToPlay(0);
+        }
+        int timePenalty;
         //TODO: Call the start() method to start playing the game
+        
+        while (!gameApp.game.isOver())
+        {
+        	//Step 1 display how much time remains
+        	//Step 2 create new jobs
+        	gameApp.game.displayActiveJobs();   //Step 3
+        	int index = getIntegerInput("Enter the index of the job that you want to work on:");  //Step 4
+        	if (!(index == 0))
+        	{
+        		timePenalty = index;
+        		gameApp.game.setTimeToPlay (gameApp.game.getTimeToPlay() - timePenalty);  
+        	}
+        	int time = getIntegerInput("Enter the time you want to work on this job:");  //Step 5
+        	
+        }
     }
 
     /**
