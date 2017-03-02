@@ -23,7 +23,7 @@ public class Game{
        scoreBoard = new Scoreboard();
        this.timeToPlay = timeToPlay;
        jobSimulator = new JobSimulator(seed);
-    	
+
     }
 
     /**
@@ -65,7 +65,7 @@ public class Game{
      */
     public void createJobs(){
         //TODO: Invoke the simulator to create jobs
-    	
+
     }
 
     /**
@@ -141,7 +141,19 @@ public class Game{
      *
      */
     public void displayActiveJobs(){
-        //TODO: Display all the active jobs
+
+      //Print header
+      System.out.println("Job Listing");
+
+      //iterate through list of jobs
+      for(int i = 0; i < list.size(); i++){
+          //print position and call job to String
+          System.out.println("At position: " + i + " " + list.get(i).toString);
+
+      }
+
+      //last line has a \n space
+      System.out.println();
 
     }
 
@@ -150,7 +162,7 @@ public class Game{
      */
     public void displayCompletedJobs(){
         scoreBoard.displayScoreBoard();
-
+        
     }
 
     /**
