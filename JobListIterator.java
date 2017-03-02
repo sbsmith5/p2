@@ -3,32 +3,31 @@ import java.util.NoSuchElementException;
 
 public class JobListIterator implements Iterator<Job> {
 
-private Listnode<Job> curr;
+	private Listnode<Job> curr;
 
-public JobListIterator(Listnode<Job> head) {
-	curr = head;
+	public JobListIterator(Listnode<Job> head) {
+		curr = head;
 	}
 
-
-
-
-@Override
-public boolean hasNext() {
-	if(curr.getNext()!=null){
-		return true;
+	@Override
+	public boolean hasNext() {
+		if (curr.getNext() != null) {
+			return true;
+		}
+		return false;
 	}
-	return false;
-}
 
-@Override
-public Job next() {
-	
-	if(curr.getNext()==null){
-		throw new NoSuchElementException();
+	@Override
+	public Job next() {
+
+		if (curr.getNext() == null) {
+			throw new NoSuchElementException();
+		}
+		curr = curr.getNext();
+		return curr.getData();
+
 	}
-	curr = curr.getNext();
-	return curr.getData();
-	
-	
-}
+	public void remove(){
+		return;
+	}
 }

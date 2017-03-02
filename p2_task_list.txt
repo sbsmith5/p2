@@ -1,7 +1,7 @@
 /************************************************************
   p2 Task List (must be completed and submitted for Team Building 102)
   
-  Team Number: _________   Team Name: ____________________________
+  Team Number: _17_   Team Name: ____________________________
 
 In an effort to help students improve the process of learning to
 to work together in their teams and as a way to provide each team with 
@@ -33,13 +33,13 @@ Task List Usage:
    Anyone can work on any subtask (not just the person who identified
    the sub task).
 
-- Task 0: Each team member must carefully read the assignment and put
++ Task 0: Each team member must carefully read the assignment and put
   some notes together regarding how they might approach the work 
   required for this programming assignment.  Plan to meet in person
   to discuss how you can best complete this assignment.  Do you want 
   to work in smaller groups on specific tasks?
      
-- Task 1: Assign Code Letters for each Team Member
++SS Task 1: Assign Code Letters for each Team Member
 
   Each team member is assigned a code letter.
   It can be the first letter of your name or any other unique letter.
@@ -49,12 +49,12 @@ Task List Usage:
   Complete this table:
   Code letter = Student name
   ---------------------------
-              = 
-              =
-              =
-              =
-              =
-              =
+           AB = Aleysha Becker
+           MO =	Mike Osmian
+           RO =	Robert O'Dogherty
+           SS = Sid Smith
+           VC = Vanessa Chavez
+           YW = Yuqi Wei
               =
               
 - Task 2: Define the JobList class so that it implements the ListADT
@@ -74,10 +74,11 @@ Task List Usage:
        - add(item)
        - add(pos,item)
        - remove(pos)
-       - ...
-       - ...
-       - ...
-       - ...
+       - iterator()
+       - contains(item)
+       - isEmpty()
+       - size()
+       - get(pos)
        
 - Task 3: Write a Test_JobList class 
   This can be written before Task 2 is finished.
@@ -85,7 +86,7 @@ Task List Usage:
   - add a main method
   - add a test to create a JobList
   - test add(item) method
-  - test add(pos,item) method
+  +SS test add(pos,item) method
   - test ...
   - test ...
   - test ...
