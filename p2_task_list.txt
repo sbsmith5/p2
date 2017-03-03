@@ -114,7 +114,7 @@ oRO Task 6: Write the Scoreboard class so that it implements all
 oRO Task 7: Complete the Game class implementation by completing the
   TODO tags.
 
-- Task 8: Re-read the assignment and map out the actions that must
+oSS Task 8: Re-read the assignment and map out the actions that must
   happen in the GameApp (main) class.  There is much to do here and
   it may be much more convenient to write methods and call them
   from the main method.

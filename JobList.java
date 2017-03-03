@@ -83,7 +83,7 @@ public class JobList implements ListADT<Job> {
 	}
 
 	@Override
-	public Job get(int pos) {
+	public Job get(int pos) throws IndexOutOfBoundsException{
 		if (pos < 0 || pos >= numItems) {
 			throw new IndexOutOfBoundsException();
 		}
@@ -97,7 +97,7 @@ public class JobList implements ListADT<Job> {
 	}
 
 	@Override
-	public Job remove(int pos) {
+	public Job remove(int pos) throws IndexOutOfBoundsException{
 		
 		if (pos < 0 || pos >= numItems) {
 			throw new IndexOutOfBoundsException();

@@ -1,3 +1,16 @@
+/////////////////////////////////////////////////////////////////////////////
+//Semester:         CS367 Spring 2016
+//PROJECT:          p1
+//FILE:             GradeEstimator.java
+//
+//Author1: (Yuqi Wei,@wisc.edu,,001)
+//
+//---------------- OTHER ASSISTANCE CREDITS
+//Persons: N/A
+//
+//Online sources: N/A
+////////////////////////////80 columns wide //////////////////////////////////
+
 public class Game{
 
     /**
@@ -148,7 +161,7 @@ public class Game{
       //iterate through list of jobs
       for(int i = 0; i < list.size(); i++){
           //print position and call job to String
-          System.out.println("At position: " + i + " " + list.get(i).toString);
+          System.out.println("At position: " + i + " " + list.get(i).toString());
 
       }
 
