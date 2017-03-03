@@ -49,27 +49,16 @@ Task List Usage:
   Complete this table:
   Code letter = Student name
   ---------------------------
-<<<<<<< Updated upstream
+
            AB = Aleysha Becker
            MO =	Mike Osmian
            RO =	Robert O'Dogherty
            SS = Sid Smith
            VC = Vanessa Chavez
            YW = Yuqi Wei
-              =
-
-- Task 2: Define the JobList class so that it implements the ListADT
-=======
-          MO  = Michael Osmian
-              =
-              =
-              =
-              =
-              =
-              =
+ 
               
 +(DONE)(MO) Task 2: Define the JobList class so that it implements the ListADT
->>>>>>> Stashed changes
   as described in p0.  List sub-tasks here.
 
     + Create an Eclipse project for p2
@@ -93,12 +82,6 @@ Task List Usage:
        - size()
        - get(pos)
 
-- Task 3: Write a Test_JobList class
-=======
-       - ...
-       - ...
-       - ...
-       - ...
        
 +(DONE)(MO) Task 3: Write a Test_JobList class 
 >>>>>>> Stashed changes
@@ -111,24 +94,16 @@ Task List Usage:
   - test ...
   - test ...
   - test ...
-<<<<<<< Updated upstream
 
-- Task 4: Write a JobListIterator class
-=======
-  
 + (DONE)(MO)Task 4: Write a JobListIterator class
 >>>>>>> Stashed changes
   Make sure that it is implemented as described in the assignment.
   - add a constructor
   - hasNext()
   - next()
-<<<<<<< Updated upstream
 
-- Task 5: Add a test to your Test_JobList class to test that the
-=======
   
 +(DONE)(MO) Task 5: Add a test to your Test_JobList class to test that the 
->>>>>>> Stashed changes
   JobList can return an iterator and that the JobListIterator
   works as expected.
 
