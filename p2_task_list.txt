@@ -91,11 +91,12 @@ Task List Usage:
   +(DONE)(MO) test add(item) method
   +(DONE)(MO) test add(pos,item) method
 
-+ (DONE)(MO)Task 4: Write a JobListIterator class
++ (DONE)(MO)(SS) Task 4: Write a JobListIterator class
   Make sure that it is implemented as described in the assignment.
   +(DONE)(MO) add a constructor
   +(DONE)(MO) hasNext()
   +(DONE)(MO) next()
+  +(DONE)(SS) remove()
 
   
 +(DONE)(MO) Task 5: Add a test to your Test_JobList class to test that the 
