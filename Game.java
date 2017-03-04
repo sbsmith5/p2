@@ -1,16 +1,24 @@
 /////////////////////////////////////////////////////////////////////////////
-//Semester:         CS367 Spring 2016
-//PROJECT:          p1
-//FILE:             GradeEstimator.java
+// Semester:         CS367 Spring 2016 
+// PROJECT:          Program2
+// FILE:             Game.java
 //
-//Author1: (Yuqi Wei,@wisc.edu,,001)
+// TEAM:    (Team 17, MAVSYR)
+// Author1: (Michael Osmian,Osmian@wisc.edu,osmian,001)
+// Author2: (Roberto O'dogherty)
 //
-//---------------- OTHER ASSISTANCE CREDITS
-//Persons: N/A
-//
-//Online sources: N/A
-////////////////////////////80 columns wide //////////////////////////////////
+// ---------------- OTHER ASSISTANCE CREDITS 
+// Persons: N/A
+// 
+// Online sources:N/A
+//////////////////////////// 80 columns wide //////////////////////////////////
 
+/**
+ * This class is in The Game class is responsible for maintaining the active list of 
+ * jobs and utilizes the JobSimulator class to create new jobs to be added to the end of the job listing. 
+ *
+ * @author Michael Osmian
+ */
 public class Game{
 
     /**
@@ -36,6 +44,7 @@ public class Game{
        scoreBoard = new Scoreboard();
        this.timeToPlay = timeToPlay;
        jobSimulator = new JobSimulator(seed);
+       list = new JobList();
 
     }
 
@@ -66,18 +75,20 @@ public class Game{
      * else returns false
      */
     public boolean isOver(){
-        //TODO: check if the game is over or not
+        //check if the game is over or not
     	if(timeToPlay<=0){
     		return true;
     	}
+    	else{
         return false;
+    	}
     }
     /**
      * This method simply invokes the simulateJobs method
      * in the JobSimulator object.
      */
-    public void createJobs(){
-        //TODO: Invoke the simulator to create jobs
+    public void createJobs(){	
+        jobSimulator.simulateJobs(list, timeToPlay);
 
     }
 
@@ -132,17 +143,28 @@ public class Game{
      *      The amount of time the given job is to be worked on for.
      */
     public Job updateJob(int index, int duration){
-    	Job currJob = list.remove(index);
-    	int timePenalty = Integer.parseInt(currJob.getJobName().substring(1));
-    	timeToPlay -= timePenalty;
-    	if (duration > timeToPlay)
-    		duration = timeToPlay;
-    	for (int i = 0; i < duration; i++) { //the best I could come up with for “execute job??”
-    		currJob.setSteps(currJob.getSteps() + 1);
-    		timeToPlay--;
+    	if(duration>timeToPlay) duration = timeToPlay;
+    	if(duration>list.get(index).getTimeUnits()){
+    		duration =list.get(index).getTimeUnits();
     	}
-    	if (currJob.isCompleted()) scoreBoard.updateScoreBoard(currJob);
-    	return currJob;
+    	
+    	list.get(index).setSteps(list.get(index).getSteps()+duration);
+		duration+=index;
+    	timeToPlay-=duration;
+    	Job tempJob = list.get(index);
+    	
+    	if(list.get(index).isCompleted()){
+    		scoreBoard.updateScoreBoard(tempJob);
+    		System.out.println("Job completed! Current Score: " + this.getTotalScore());
+    		list.remove(index);
+    	}
+    	else{
+    		int userPos = GameApp.getIntegerInput("At what position would you like to insert the job back into the list?\n");
+    		list.remove(index);
+    		list.add(userPos,tempJob);
+    	}
+    	
+    	return tempJob;
     }
 
     /**
@@ -156,13 +178,14 @@ public class Game{
     public void displayActiveJobs(){
 
       //Print header
+   
+    System.out.println("You have "+timeToPlay+ " left in the game!");
       System.out.println("Job Listing");
 
       //iterate through list of jobs
       for(int i = 0; i < list.size(); i++){
           //print position and call job to String
           System.out.println("At position: " + i + " " + list.get(i).toString());
-
       }
 
       //last line has a \n space
