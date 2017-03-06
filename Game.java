@@ -6,6 +6,7 @@
 // TEAM:    (Team 17, MAVSYR)
 // Author1: (Michael Osmian,Osmian@wisc.edu,osmian,001)
 // Author2: (Roberto O'dogherty)
+// Author3: (Aleysha Becker, ambecker5@wisc.edu, ambecker5, 001)
 //
 // ---------------- OTHER ASSISTANCE CREDITS 
 // Persons: N/A
