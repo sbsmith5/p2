@@ -1,24 +1,26 @@
 /////////////////////////////////////////////////////////////////////////////
-// Semester:         CS367 Spring 2016 
+// Semester:         CS367 Spring 2016
 // PROJECT:          Program2
 // FILE:             GameApp.java
 //
 // TEAM:    (Team 17, MAVSYR)
 // Author1: (Michael Osmian,Osmian@wisc.edu,osmian,001)
-// Author2: (Yuqi Wei)
+// Author2: (Yuqi Wei, wei56@wisc.edu, 001)
+// Author3: (Vanessa Chavez, vchavez2@wisc.edu, 001)
 //
-// ---------------- OTHER ASSISTANCE CREDITS 
+// ---------------- OTHER ASSISTANCE CREDITS
 // Persons: N/A
-// 
+//
 // Online sources:N/A
 //////////////////////////// 80 columns wide //////////////////////////////////
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- *This is the main class that starts the program execution and starts 
- *the main program loop. It takes two command line arguments, a seed for the random number generator and a 
- *positive integer indicating the duration. 
+ *This is the main class that starts the program execution and starts
+ *the main program loop. It takes two command line arguments, a seed for the random number generator and a
+ *positive integer indicating the duration.
  *If either entry is not a positive integer the program terminates.
  * @author Michael Osmian-From Canvas
  */
@@ -51,15 +53,18 @@ public class GameApp{
      */
     public static void main(String[] args){
     	try{
-    	GameApp gameApp = new GameApp(Integer.valueOf(args[0]),Integer.valueOf(args[1]));
-      	System.out.println("Welcome to the Job Market!");
-    	gameApp.start();
-    	System.out.println("Game Over!");
-    	System.out.println("Your final score: " + gameApp.game.getTotalScore());
+	    	GameApp gameApp = new GameApp(Integer.valueOf(args[0]),Integer.valueOf(args[1]));
+	      	System.out.println("Welcome to the Job Market!");
+	    	gameApp.start();
+	    	System.out.println("Game Over!");
+	    	System.out.println("Your final score: " + gameApp.game.getTotalScore());
+    	}
+    	catch(NoSuchElementException e) {
     	}
     	catch(IllegalArgumentException e){
     		System.out.println("Seed and TimeToPlay must be greater than zero!");
     	}
+
 
     }
 
@@ -81,8 +86,8 @@ public class GameApp{
     		System.out.println("Total Score: "+game.getTotalScore());
     		game.displayCompletedJobs();
     		}
-    		
-    		
+
+
     	}
     }
 
